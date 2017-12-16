@@ -1,3 +1,4 @@
 <p>
-  stars works!
+  <span *ngFor="let star of stars" class="glyphicon glyphicon-star" [class.glyphicon-star-empty]="star"></span>
+  <!-- [class表示我绑定的是一个样式,star为true/false判断这个样式是否存在 -->
 </p>
