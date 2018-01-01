@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-stars',
@@ -9,6 +9,7 @@ export class StarsComponent implements OnInit {
 
   // 星级评价的rating属性的值应该由它的父组件传递给他
   // @Input() content:number;
+  @Input()
   private rating:number = 0
 
   private stars: boolean[]
@@ -16,11 +17,11 @@ export class StarsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    // this.stars = []
-    // for(let i = 1; i <= 5; i++){
-    //   this.stars.push(i > this.rating)
-    // }
-    // this.stars = [true,true,true,true,true]
+    this.stars = []
+    for(let i = 1; i <= 5; i++){
+      this.stars.push(i > this.rating)
+    }
+    // this.stars = [false,true,true,true,true]
   }
 
 }
